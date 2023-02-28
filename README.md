@@ -1,5 +1,11 @@
 ### Hi there 👋
 
+<picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/suren-atoyan/suren-atoyan/output/github-contribution-grid-snake-dark.svg">
+ <img alt="snake!" src="https://raw.githubusercontent.com/stephaned-ev/stephaned-ev/output/github-contribution-grid-snake-light.svg">
+</picture>
+
+
 [![Stéphane's GitHub stats](https://github-readme-stats.vercel.app/api?username=stephaned-ev&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
 
 
