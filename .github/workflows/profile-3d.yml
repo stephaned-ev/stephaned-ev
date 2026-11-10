@@ -16,8 +16,12 @@ jobs:
       - uses: actions/checkout@v5
       - uses: yoshi389111/github-profile-3d-contrib@latest
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # PROFILE_3D_TOKEN (optional personal access token) lets the radar
+          # count private activity; without it only public activity is counted.
+          GITHUB_TOKEN: ${{ secrets.PROFILE_3D_TOKEN || secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
+      - name: Drop the language pie and fit the radar scale
+        run: python3 .github/scripts/trim_3d.py profile-3d-contrib/*.svg
       # main is protected (pull requests only), so the generated images
       # live on their own branch and the README points at it.
       - name: Publish images to the profile-3d branch
