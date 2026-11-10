@@ -10,7 +10,7 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg">
-    <img src="./profile-3d-contrib/profile-green-animate.svg" width="100%" alt="My GitHub contributions over the last year, as a 3D landscape">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/stephaned-ev/stephaned-ev/profile-3d/profile-night-rainbow.svg">
+    <img src="https://raw.githubusercontent.com/stephaned-ev/stephaned-ev/profile-3d/profile-green-animate.svg" width="100%" alt="My GitHub contributions over the last year, as a 3D landscape">
   </picture>
 </p>
