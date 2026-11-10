@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-labelledby="t d">
+  <title id="t">Stéphaned — CTO, developer, freelancer</title>
+  <desc id="d">A lantern fish drifts through a misty forest and its light reveals the name Stéphaned.</desc>
+
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050a0c"/>
+      <stop offset="0.55" stop-color="#0b181a"/>
+      <stop offset="1" stop-color="#132426"/>
+    </linearGradient>
+    <linearGradient id="groundFog" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9c4be" stop-opacity="0"/>
+      <stop offset="1" stop-color="#a9c4be" stop-opacity="0.22"/>
+    </linearGradient>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#ffe2a0" stop-opacity="0.55"/>
+      <stop offset="0.25" stop-color="#ffd27a" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#ffd27a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="reveal">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.55" stop-color="#fff" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.6"/>
+    </radialGradient>
+    <filter id="blur30" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="30"/></filter>
+    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="4"/></filter>
+    <clipPath id="frame"><rect width="1200" height="360" rx="18"/></clipPath>
+
+    <!-- one forest "tile" per depth, 1200 wide, repeated for a seamless loop -->
+    <g id="farTile" fill="#12211f">
+      <rect x="40" y="-10" width="12" height="380"/><rect x="150" y="-10" width="9" height="380"/>
+      <rect x="235" y="-10" width="14" height="380"/><rect x="330" y="-10" width="10" height="380"/>
+      <rect x="450" y="-10" width="12" height="380"/><rect x="540" y="-10" width="8" height="380"/>
+      <rect x="660" y="-10" width="13" height="380"/><rect x="760" y="-10" width="10" height="380"/>
+      <rect x="850" y="-10" width="9" height="380"/><rect x="960" y="-10" width="14" height="380"/>
+      <rect x="1050" y="-10" width="10" height="380"/><rect x="1140" y="-10" width="11" height="380"/>
+    </g>
+    <g id="midTile" fill="#0b1617">
+      <rect x="90" y="-10" width="26" height="380"/><rect x="290" y="-10" width="20" height="380"/>
+      <rect x="400" y="-10" width="30" height="380"/><rect x="620" y="-10" width="24" height="380"/>
+      <rect x="800" y="-10" width="28" height="380"/><rect x="1010" y="-10" width="22" height="380"/>
+      <rect x="1120" y="-10" width="18" height="380"/>
+    </g>
+    <g id="nearTile" fill="#04090a">
+      <rect x="180" y="-10" width="58" height="380"/>
+      <rect x="560" y="-10" width="44" height="380"/>
+      <rect x="920" y="-10" width="68" height="380"/>
+    </g>
+
+    <!-- the fish and its light share this path so they stay in sync -->
+    <path id="swim" d="M-240,120 C60,70 320,135 620,100 S1100,150 1440,95"/>
+
+    <mask id="lit" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="360">
+      <rect width="1200" height="360" fill="#000"/>
+      <g>
+        <animateMotion dur="24s" repeatCount="indefinite"><mpath xlink:href="#swim"/></animateMotion>
+        <circle cx="95" cy="45" r="290" fill="url(#reveal)"/>
+      </g>
+    </mask>
+  </defs>
+
+  <style>
+    .sans { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .far  { animation: drift 150s linear infinite; }
+    .mid  { animation: drift 95s linear infinite; }
+    .near { animation: drift 55s linear infinite; }
+    .fogA { animation: sway 26s ease-in-out infinite alternate; }
+    .fogB { animation: sway 34s ease-in-out infinite alternate-reverse; }
+    .pulse { animation: pulse 3.2s ease-in-out infinite; }
+    .spore { animation: rise 14s linear infinite; opacity: 0; }
+    @keyframes drift { to { transform: translateX(-1200px); } }
+    @keyframes sway  { from { transform: translateX(-90px); } to { transform: translateX(90px); } }
+    @keyframes pulse { 0%,100% { opacity: .75; } 50% { opacity: 1; } }
+    @keyframes rise  {
+      0%   { transform: translateY(0); opacity: 0; }
+      15%  { opacity: .7; }
+      85%  { opacity: .5; }
+      100% { transform: translateY(-260px); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .far, .mid, .near, .fogA, .fogB, .pulse, .spore { animation: none; }
+    }
+  </style>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="360" fill="url(#sky)"/>
+
+    <!-- far forest -->
+    <g class="far" opacity="0.8"><use xlink:href="#farTile"/><use xlink:href="#farTile" x="1200"/></g>
+
+    <!-- drifting mist -->
+    <g filter="url(#blur30)" fill="#a9c4be">
+      <ellipse class="fogA" cx="300" cy="230" rx="420" ry="46" opacity="0.10"/>
+      <ellipse class="fogB" cx="900" cy="150" rx="460" ry="40" opacity="0.08"/>
+    </g>
+
+    <!-- mid forest -->
+    <g class="mid"><use xlink:href="#midTile"/><use xlink:href="#midTile" x="1200"/></g>
+
+    <!-- lantern fish -->
+    <g>
+      <animateMotion dur="24s" repeatCount="indefinite"><mpath xlink:href="#swim"/></animateMotion>
+      <circle class="pulse" cx="95" cy="-40" r="210" fill="url(#halo)"/>
+      <g fill="#060b0d" stroke="#33494a" stroke-width="1">
+        <path d="M-62,0 L-112,-36 C-100,-12 -100,12 -112,36 Z">
+          <animateTransform attributeName="transform" type="rotate" values="-9 -62 0;9 -62 0;-9 -62 0" dur="1.8s" repeatCount="indefinite"/>
+        </path>
+        <path d="M-22,-29 C-8,-60 26,-54 32,-29 Z"/>
+        <path d="M-70,0 C-50,-38 30,-42 70,-8 C79,0 79,8 70,14 C30,44 -50,36 -70,0 Z"/>
+        <path d="M-6,14 C-18,34 -2,42 14,24 Z">
+          <animateTransform attributeName="transform" type="rotate" values="-8 -6 14;10 -6 14;-8 -6 14" dur="2.4s" repeatCount="indefinite"/>
+        </path>
+      </g>
+      <!-- lure -->
+      <path d="M44,-27 C52,-58 80,-62 95,-40" fill="none" stroke="#33494a" stroke-width="1.5"/>
+      <circle class="pulse" cx="95" cy="-40" r="9" fill="#ffd98a" filter="url(#glow)"/>
+      <circle cx="95" cy="-40" r="4" fill="#fff6dc"/>
+      <!-- eye -->
+      <circle class="pulse" cx="46" cy="-6" r="8" fill="#ffd98a" filter="url(#glow)"/>
+      <circle cx="46" cy="-6" r="3.5" fill="#fff6dc"/>
+    </g>
+
+    <!-- near forest -->
+    <g class="near"><use xlink:href="#nearTile"/><use xlink:href="#nearTile" x="1200"/></g>
+
+    <!-- spores -->
+    <g fill="#ffe2a0">
+      <circle class="spore" cx="140" cy="330" r="1.6" style="animation-delay:-1s"/>
+      <circle class="spore" cx="310" cy="345" r="1.2" style="animation-delay:-6s"/>
+      <circle class="spore" cx="470" cy="320" r="1.8" style="animation-delay:-11s"/>
+      <circle class="spore" cx="640" cy="350" r="1.3" style="animation-delay:-3s"/>
+      <circle class="spore" cx="790" cy="335" r="1.6" style="animation-delay:-8s"/>
+      <circle class="spore" cx="930" cy="348" r="1.1" style="animation-delay:-12s"/>
+      <circle class="spore" cx="1080" cy="325" r="1.7" style="animation-delay:-5s"/>
+    </g>
+
+    <rect y="200" width="1200" height="160" fill="url(#groundFog)"/>
+    <rect width="1200" height="360" fill="url(#vignette)"/>
+
+    <!-- identity: dim at rest… -->
+    <g fill="#9db3b0" opacity="0.5">
+      <text class="mono" x="82" y="150" font-size="14" letter-spacing="4">CTO · DEVELOPER · FREELANCER</text>
+      <text class="sans" x="78" y="222" font-size="68" font-weight="700" letter-spacing="-1">Stéphaned</text>
+      <text class="mono" x="82" y="258" font-size="14" letter-spacing="2">tech enthusiast — @stephaned-ev</text>
+    </g>
+    <!-- …and lit when the lantern passes -->
+    <g mask="url(#lit)">
+      <text class="mono" x="82" y="150" font-size="14" letter-spacing="4" fill="#ffd98a">CTO · DEVELOPER · FREELANCER</text>
+      <text class="sans" x="78" y="222" font-size="68" font-weight="700" letter-spacing="-1" fill="#fff6dc">Stéphaned</text>
+      <text class="mono" x="82" y="258" font-size="14" letter-spacing="2" fill="#ffe9b8">tech enthusiast — @stephaned-ev</text>
+    </g>
+
+    <!-- HUD -->
+    <g fill="none" stroke="#7d9a95" stroke-width="1.2" opacity="0.55">
+      <path d="M28,48 V28 H48"/><path d="M1152,28 H1172 V48"/>
+      <path d="M28,312 V332 H48"/><path d="M1152,332 H1172 V312"/>
+    </g>
+    <g class="mono" font-size="11" fill="#7d9a95" opacity="0.8" letter-spacing="2">
+      <text x="60" y="38">PROFILE // 67502129</text>
+      <text x="1140" y="38" text-anchor="end">48.8566° N · 2.3522° E</text>
+      <text x="1140" y="330" text-anchor="end">PARIS · FR</text>
+    </g>
+  </g>
+</svg>

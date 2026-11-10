@@ -1,25 +1,16 @@
-### Hi there 👋
+<p align="center">
+  <img src="./assets/banner.svg" width="100%" alt="Stéphaned — CTO, developer, freelancer. A lantern fish drifts through a misty forest.">
+</p>
 
-<picture>
- <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/suren-atoyan/suren-atoyan/output/github-contribution-grid-snake-dark.svg">
- <img alt="snake!" src="https://raw.githubusercontent.com/stephaned-ev/stephaned-ev/output/github-contribution-grid-snake-light.svg">
-</picture>
+<p align="center">
+  <a href="mailto:stephaned@protonmail.ch">
+    <img src="./assets/holo-card.svg" width="520" alt="Stéphaned — CTO · developer · freelancer — Paris, FR — @stephaned-ev">
+  </a>
+</p>
 
-
-<!-- [![Stéphane's GitHub stats](https://github-readme-stats.vercel.app/api?username=stephaned-ev&count_private=true)](https://github.com/anuraghazra/github-readme-stats) -->
-
-
-<!--
-**stephaned-ev/stephaned-ev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg">
+    <img src="./profile-3d-contrib/profile-green-animate.svg" width="100%" alt="My GitHub contributions over the last year, as a 3D landscape">
+  </picture>
+</p>
